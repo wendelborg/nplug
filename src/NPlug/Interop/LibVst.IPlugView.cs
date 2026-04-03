@@ -46,13 +46,13 @@ internal static unsafe partial class LibVst
         private static partial ComResult onKeyDown_ToManaged(IPlugView* self, ushort key, short keyCode, short modifiers)
         {
             Get(self).OnKeyDown(key, keyCode, modifiers);
-            return true;
+            return false; // Let the host handle all keys (e.g. spacebar for transport)
         }
 
         private static partial ComResult onKeyUp_ToManaged(IPlugView* self, ushort key, short keyCode, short modifiers)
         {
             Get(self).OnKeyUp(key, keyCode, modifiers);
-            return true;
+            return false;
         }
 
         private static partial ComResult getSize_ToManaged(IPlugView* self, ViewRect* size)
