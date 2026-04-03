@@ -102,6 +102,10 @@ internal static unsafe partial class LibVst
             {
                 platform = AudioPluginViewPlatform.HIView;
             }
+            else if (span.SequenceEqual("NSView"u8))
+            {
+                platform = AudioPluginViewPlatform.NSView;
+            }
             else if (span.SequenceEqual("UIView"u8))
             {
                 platform = AudioPluginViewPlatform.UIView;
